@@ -1,0 +1,35 @@
+{
+    "name": "react-test",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "allotment": "^1.20.2",
+        "fifo-icons": "^0.0.8",
+        "fifo-web-storage": "^1.0.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-icons": "^4.12.0",
+        "react-router-dom": "^6.28.0",
+        "tweakpane": "^4.0.5",
+        "zustand": "^4.5.5"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "4.0.0-alpha.28",
+        "@tweakpane/core": "^2.0.5",
+        "@types/lodash": "^4.17.13",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@types/react-router-dom": "^5.3.3",
+        "@vitejs/plugin-react": "^4.3.4",
+        "less": "^4.2.1",
+        "tailwindcss": "4.0.0-alpha.34",
+        "typescript": "^5.7.2",
+        "vite": "^5.4.11"
+    }
+}
