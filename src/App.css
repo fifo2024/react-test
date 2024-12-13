@@ -10,12 +10,12 @@
     --color-gray-50: #f8fafc;
     --color-gray-100: #f1f5f9;
     --color-gray-200: #e2e8f0;
+    --color-gray-500: #e8e8e8;
     --color-green-800: #3f6212;
     --color-green-900: #365314;
     --color-green-950: #1a2e05;
     --color-flower-200: #0f8800;
 }
-
 
 body {
     margin: 0;
@@ -24,6 +24,7 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-gray-500);
 }
 
 code {

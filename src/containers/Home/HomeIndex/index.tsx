@@ -4,8 +4,18 @@
 import React, { FC, useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import WebStorage from "fifo-web-storage";
+import {
+    HiRectangleStack,
+    HiMiniRectangleGroup,
+    HiMiniUsers,
+    HiSparkles,
+    HiSwatch,
+    HiPhoto,
+    HiSquare3Stack3D,
+    HiWallet,
+} from "react-icons/hi2";
 import { LeftOutlined, RightOutlined } from "fifo-icons";
-import { Card } from "@/components";
+import { Card, Tabs, Loading } from "@/components";
 import "fifo-icons/dist/index.css";
 import styles from "./style.module.less";
 
@@ -44,8 +54,13 @@ const Main: FC<MainProps> = () => {
     useEffect(() => {}, []);
 
     const onClick = () => {
+        Loading.show();
         const userInfo = store.get();
         store.set({ name: "Jane Doe", age: (userInfo as any).age + 1 });
+
+        setTimeout(() => {
+            Loading.hide();
+        }, 10000);
     };
 
     const onGotoNext = (nextUrl: string) => {
@@ -68,28 +83,107 @@ const Main: FC<MainProps> = () => {
             </div>
             <div
                 style={{ margin: "24px" }}
-                className="flex align-middle gap-[16px] flex-row"
+                className="flex justify-end align-bottom gap-[16px] flex-row"
             >
-                <Card {...{ title: "tweakpane", url: "/tweak-pane" }} />
-                <Card {...{ title: "allotment", url: "/allotment" }} />
                 <Card
-                    {...{ title: "allotment nested", url: "/allotment-nested" }}
+                    {...{
+                        tag: "pane",
+                        title: "tweakpane",
+                        url: "/tweak-pane",
+                        icon: (
+                            <HiSparkles
+                                style={{ fontSize: "24px", color: "#EB4335" }}
+                            />
+                        ),
+                    }}
                 />
                 <Card
                     {...{
+                        tag: "layout",
+                        title: "allotment",
+                        url: "/allotment",
+                        icon: (
+                            <HiWallet
+                                style={{ fontSize: "24px", color: "#EB4335" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "layout",
+                        title: "allotment nested",
+                        url: "/allotment-nested",
+                        icon: (
+                            <HiRectangleStack
+                                style={{ fontSize: "24px", color: "#4285F4" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "layout",
                         title: "allotment closable",
                         url: "/allotment-closable",
+                        icon: (
+                            <HiSquare3Stack3D
+                                style={{ fontSize: "24px", color: "#c5c5c5" }}
+                            />
+                        ),
                     }}
-                />
-                <Card
-                    {...{ title: "allotment reset", url: "/allotment-reset" }}
                 />
                 <Card
                     {...{
-                        title: "allotment visible",
-                        url: "/allotment-visible",
+                        tag: "layout",
+                        title: "allotment reset",
+                        url: "/allotment-reset",
+                        icon: (
+                            <HiPhoto
+                                style={{ fontSize: "24px", color: "#4285F4" }}
+                            />
+                        ),
                     }}
                 />
+                <Card
+                    {...{
+                        tag: "layout",
+                        title: "allotment visible",
+                        url: "/allotment-visible",
+                        icon: (
+                            <HiSwatch
+                                style={{ fontSize: "24px", color: "#4285F4" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "sign",
+                        title: "sign in",
+                        url: "/sign-in",
+                        icon: (
+                            <HiMiniUsers
+                                style={{ fontSize: "24px", color: "#34A853" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "card",
+                        title: "car animation",
+                        url: "/car-animation",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+            </div>
+            <div className={styles.tabs}>
+                <Tabs />
             </div>
         </div>
     );

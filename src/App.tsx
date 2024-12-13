@@ -20,6 +20,7 @@ const AllotmentVisible = lazy(
 );
 const CarAnimation = lazy(() => import("@/containers/CarAnimation"));
 const TweakPane = lazy(() => import("@/containers/TweakPane"));
+const SignIn = lazy(() => import("@/containers/SignIn"));
 
 function App() {
     return (
@@ -47,6 +48,7 @@ function App() {
                     />
                     <Route path={"car-animation"} element={<CarAnimation />} />
                     <Route path={"tweak-pane"} element={<TweakPane />} />
+                    <Route path={"sign-in"} element={<SignIn />} />
                     <Route path="*" element={<Page404 />} />
                 </Route>
             </Routes>
