@@ -15,7 +15,7 @@ import {
     HiWallet,
 } from "react-icons/hi2";
 import { LeftOutlined, RightOutlined } from "fifo-icons";
-import { Card, Tabs, Loading } from "@/components";
+import { Card, Tabs, Loading, Hot, SvgHover } from "@/components";
 import "fifo-icons/dist/index.css";
 import styles from "./style.module.less";
 
@@ -80,10 +80,25 @@ const Main: FC<MainProps> = () => {
                     }}
                 />
                 <RightOutlined />
+                <span style={{ position: "relative" }}>
+                    <span>我是一个文本文件</span>
+                    <Hot color="#30ff30" />
+                </span>
+                <div style={{ position: "relative" }}>
+                    <span>我是一个文本文件-----------------</span>
+                    <Hot color="#660f11" />
+                </div>
+                <div style={{ position: "relative" }}>
+                    <span>我是一个文本文件-----------------</span>
+                    <Hot color="#f03337" />
+                </div>
+                <div>
+                    <SvgHover />
+                </div>
             </div>
             <div
                 style={{ margin: "24px" }}
-                className="flex justify-end align-bottom gap-[16px] flex-row"
+                className="flex justify-end align-bottom gap-[16px] flex-row flex-wrap"
             >
                 <Card
                     {...{
@@ -174,6 +189,18 @@ const Main: FC<MainProps> = () => {
                         tag: "card",
                         title: "car animation",
                         url: "/car-animation",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "layout",
+                        title: "secret project",
+                        url: "/secret-project",
                         icon: (
                             <HiMiniRectangleGroup
                                 style={{ fontSize: "24px", color: "#FBBC05" }}

@@ -1,0 +1,27 @@
+.hov {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(108, 108, 108);
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: rgb(66, 66, 66);
+    }
+
+    &:hover svg {
+        color: white;
+    }
+
+    & svg {
+        color: rgba(255, 255, 255, 0.651);
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
+}

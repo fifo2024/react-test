@@ -17,6 +17,10 @@
     --color-flower-200: #0f8800;
 }
 
+html {
+    font-size: 14px;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
