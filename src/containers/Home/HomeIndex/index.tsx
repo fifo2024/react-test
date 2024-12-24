@@ -3,6 +3,8 @@
  */
 import React, { FC, useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import classNames from "classnames";
+// import * as Comlink from "comlink";
 import WebStorage from "fifo-web-storage";
 import {
     HiRectangleStack,
@@ -15,9 +17,24 @@ import {
     HiWallet,
 } from "react-icons/hi2";
 import { LeftOutlined, RightOutlined } from "fifo-icons";
-import { Card, Tabs, Loading, Hot, SvgHover } from "@/components";
+import {
+    Card,
+    Tabs,
+    Loading,
+    Hot,
+    SvgHover,
+    Search,
+    Overlay,
+} from "@/components";
+import ComlinkWorker from "@/workers/comlinkWorker";
 import "fifo-icons/dist/index.css";
 import styles from "./style.module.less";
+
+// Define the worker API's type
+interface WorkerAPI {
+    add(a: number, b: number): number;
+    greet(name: string): string;
+}
 
 interface MainProps {
     [index: string]: string;
@@ -25,6 +42,7 @@ interface MainProps {
 
 const Main: FC<MainProps> = () => {
     const navigate = useNavigate();
+    const [overlayOpen, setOverlayOpen] = useState(false);
     const store = new WebStorage({
         storage: "localStorage",
         key: "testKey",
@@ -51,7 +69,20 @@ const Main: FC<MainProps> = () => {
     // store.remove();
     console.log(WebStorage);
 
-    useEffect(() => {}, []);
+    const testWork = async () => {
+        const worker = new ComlinkWorker<
+            typeof import("../../../workers/worker.ts")
+        >(new URL("../../../workers/worker", import.meta.url), {
+            type: "module",
+        });
+
+        console.log(await (worker as WorkerAPI).add(3, 8)); // Outputs: 7
+        console.log(await (worker as WorkerAPI).greet("Alice")); // Outputs: Hello, Alice!
+    };
+
+    useEffect(() => {
+        testWork();
+    }, []);
 
     const onClick = () => {
         Loading.show();
@@ -60,18 +91,34 @@ const Main: FC<MainProps> = () => {
 
         setTimeout(() => {
             Loading.hide();
-        }, 10000);
+        }, 1000);
     };
 
     const onGotoNext = (nextUrl: string) => {
         navigate(nextUrl);
     };
 
+    const onClick2 = () => {
+        setOverlayOpen(true);
+    };
+
     return (
         <div className={styles.main}>
-            Home
+            <h1>我是个H1标题</h1>
+            <h3 className={classNames(styles["header-decoration"], "mb-3")}>
+                我是个H3标题
+            </h3>
             <div id="currentValue"></div>
             <button onClick={onClick}>change</button>
+            <button onClick={onClick2}>show overlay</button>
+            <Overlay
+                open={overlayOpen}
+                draggable
+                onToggle={(visible) => setOverlayOpen(visible)}
+            >
+                <Search />
+                {/* <></> */}
+            </Overlay>
             <div>
                 <LeftOutlined
                     style={{ color: "#f234ff" }}
@@ -208,6 +255,21 @@ const Main: FC<MainProps> = () => {
                         ),
                     }}
                 />
+            </div>
+            <div style={{ width: "100%" }}>
+                <iframe
+                    src="https://codesandbox.io/embed/483nj2?view=preview&theme=dark&module=%2Fsrc%2FApp.tsx"
+                    style={{
+                        width: "100%",
+                        height: "500px",
+                        border: 0,
+                        borderRadius: "4px",
+                        overflow: "hidden",
+                    }}
+                    title="tweakpane-test"
+                    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+                    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+                ></iframe>
             </div>
             <div className={styles.tabs}>
                 <Tabs />
