@@ -25,6 +25,7 @@ import {
     SvgHover,
     Search,
     Overlay,
+    CmdkBox,
 } from "@/components";
 import ComlinkWorker from "@/workers/comlinkWorker";
 import "fifo-icons/dist/index.css";
@@ -105,6 +106,7 @@ const Main: FC<MainProps> = () => {
     return (
         <div className={styles.main}>
             <h1>我是个H1标题</h1>
+            <CmdkBox />
             <h3 className={classNames(styles["header-decoration"], "mb-3")}>
                 我是个H3标题
             </h3>
@@ -255,21 +257,102 @@ const Main: FC<MainProps> = () => {
                         ),
                     }}
                 />
-            </div>
-            <div style={{ width: "100%" }}>
-                <iframe
-                    src="https://codesandbox.io/embed/483nj2?view=preview&theme=dark&module=%2Fsrc%2FApp.tsx"
-                    style={{
-                        width: "100%",
-                        height: "500px",
-                        border: 0,
-                        borderRadius: "4px",
-                        overflow: "hidden",
+                <Card
+                    {...{
+                        tag: "search",
+                        title: "react-cmdk",
+                        url: "/react-cmdk",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
                     }}
-                    title="tweakpane-test"
-                    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-                    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-                ></iframe>
+                />
+                <Card
+                    {...{
+                        tag: "search",
+                        title: "cmdk",
+                        url: "/cmdk",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FB0C05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "sandbox",
+                        title: "sand-pack",
+                        url: "/sand-pack",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "grid",
+                        title: "grid-gallery",
+                        url: "/grid-gallery",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "code",
+                        title: "codesandbox",
+                        url: "/codesandbox",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "pdf",
+                        title: "html2pdf",
+                        url: "/html2pdf",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "card",
+                        title: "hover-card",
+                        url: "/hover-card",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "movie",
+                        title: "movie",
+                        url: "/movie",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
             </div>
             <div className={styles.tabs}>
                 <Tabs />
