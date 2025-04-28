@@ -353,6 +353,18 @@ const Main: FC<MainProps> = () => {
                         ),
                     }}
                 />
+                <Card
+                    {...{
+                        tag: "code",
+                        title: "CodeMirror",
+                        url: "/codemirror",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
             </div>
             <div className={styles.tabs}>
                 <Tabs />

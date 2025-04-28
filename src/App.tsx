@@ -35,6 +35,7 @@ const CodeSandbox = lazy(() => import("@/containers/CodeSandbox"));
 const Html2Pdf = lazy(() => import("@/containers/Html2Pdf"));
 const HoverCard = lazy(() => import("@/containers/HoverCard"));
 const MovieSite = lazy(() => import("@/containers/MovieSite"));
+const CodeMirrorContainer = lazy(() => import("@/containers/CodeMirror"));
 
 function App() {
     return (
@@ -75,6 +76,10 @@ function App() {
                     <Route path={"html2pdf"} element={<Html2Pdf />} />
                     <Route path={"hover-card"} element={<HoverCard />} />
                     <Route path={"movie"} element={<MovieSite />} />
+                    <Route
+                        path={"codemirror"}
+                        element={<CodeMirrorContainer />}
+                    />
                     <Route path="*" element={<Page404 />} />
                 </Route>
             </Routes>

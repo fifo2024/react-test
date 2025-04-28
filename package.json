@@ -29,7 +29,13 @@
         "sass": "^1.83.0",
         "styled-components": "^6.1.13",
         "tweakpane": "^4.0.5",
-        "zustand": "^4.5.5"
+        "zustand": "^4.5.5",
+        "@uiw/react-codemirror": "^4.23.11",
+        "@uiw/codemirror-theme-github": "^4.23.11",
+        "@codemirror/lang-javascript": "^6.2.3",
+        "@codemirror/lang-json": "^6.0.1",
+        "@codemirror/view": "^6.36.6",
+        "@codemirror/commands": "^6.8.1"
     },
     "devDependencies": {
         "@tailwindcss/vite": "4.0.0-alpha.28",

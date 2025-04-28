@@ -9,3 +9,4 @@ export { default as SvgHover } from "./SvgHover";
 export { default as Search } from "./Search";
 export { default as Overlay } from "./Overlay";
 export { default as CmdkBox } from "./CmdkBox";
+export { default as CodeMirror } from "./CodeMirror";
