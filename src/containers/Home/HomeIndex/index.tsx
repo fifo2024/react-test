@@ -15,6 +15,7 @@ import {
     HiPhoto,
     HiSquare3Stack3D,
     HiWallet,
+    HiVariable,
 } from "react-icons/hi2";
 import { LeftOutlined, RightOutlined } from "fifo-icons";
 import {
@@ -361,6 +362,30 @@ const Main: FC<MainProps> = () => {
                         icon: (
                             <HiMiniRectangleGroup
                                 style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "card",
+                        title: "CornerCard",
+                        url: "/corner-card",
+                        icon: (
+                            <HiMiniRectangleGroup
+                                style={{ fontSize: "24px", color: "#FBBC05" }}
+                            />
+                        ),
+                    }}
+                />
+                <Card
+                    {...{
+                        tag: "function",
+                        title: "pLimit",
+                        url: "/p-limit",
+                        icon: (
+                            <HiVariable
+                                style={{ fontSize: "24px", color: "#4285F4" }}
                             />
                         ),
                     }}

@@ -1,0 +1,97 @@
+:root {
+    --background: #fafaf9;
+    --foreground: #0f0f0f;
+    --muted: #e8e7e3;
+    --muted-foreground: #6c6560;
+    --popover: #fafaf9;
+    --popover-foreground: #0c0a09;
+    --card: #fff;
+    --card-foreground: #0c0a09;
+    --border: #dddad5;
+    --input: #dddad5;
+    --primary: #df8709;
+    --primary-foreground: #fff;
+    --secondary: #e3e2dd;
+    --secondary-foreground: #0c0a09;
+    --accent: #dddad5;
+    --accent-foreground: #0c0a09;
+    --destructive: #dc2626;
+    --destructive-foreground: #fafaf9;
+    --ring: #df8709;
+    --color-fd-primary: #df8709;
+    --radius: 0rem;
+    --z-index: 10;
+}
+
+.dark {
+    --background: #131111;
+    --foreground: #fafaf9;
+    --muted: #292524;
+    --muted-foreground: #d6d6d6;
+    --popover: #0c0a09;
+    --popover-foreground: #fafaf9;
+    --card: #1c1715;
+    --card-foreground: #fafaf9;
+    --border: #292524;
+    --input: #292524;
+    --primary: #df8709;
+    --primary-foreground: #fff;
+    --secondary: #2d2928;
+    --secondary-foreground: #fafaf9;
+    --accent: #292524;
+    --accent-foreground: #fafaf9;
+    --destructive: #dc2626;
+    --destructive-foreground: #fafaf9;
+    --ring: #ea580c;
+}
+
+.dark {
+    --color-fd-ring: #a8b1ff;
+    --color-fd-primary: #a8b1ff;
+    --color-fd-secondary-foreground: #fffff5;
+    --color-fd-card-foreground: #fffff5;
+    --color-fd-background: #1a1a1e;
+    --color-fd-foreground: #fffff5;
+    --color-fd-popover: #1a1a1e;
+    --color-fd-popover-foreground: #fffff5;
+    --color-fd-primary-foreground: #1a1a1e;
+    --color-fd-card: #1a1a1e;
+    --color-fd-muted: #212121;
+    --color-fd-border: #2f2f32;
+    --color-fd-accent: #262626;
+    --color-fd-secondary: #161618;
+    --color-fd-accent-foreground: #fff;
+    --color-fd-muted-foreground: #a2a2a9;
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-primary\/10 {
+    background-color: color-mix(in oklab, var(--primary) 10%, transparent);
+}
+
+.bg-primary\/20 {
+    background-color: color-mix(in oklab, var(--primary) 20%, transparent);
+}
+
+.bg-primary\/90 {
+    background-color: color-mix(in oklab, var(--primary) 90%, transparent);
+}
+
+:where(.divide-y > :not(:last-child)) {
+    --tw-divide-y-reverse: 0;
+    border-bottom-style: var(--tw-border-style);
+    border-top-style: var(--tw-border-style);
+    border-top-width: calc(1px * var(--tw-divide-y-reverse));
+    border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+}
+
+:where(.divide-border > :not(:last-child)) {
+    border-color: var(--border);
+}
+
+:where(.divide-fd-border > :not(:last-child)) {
+    border-color: var(--color-fd-border);
+}

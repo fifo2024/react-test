@@ -36,6 +36,8 @@ const Html2Pdf = lazy(() => import("@/containers/Html2Pdf"));
 const HoverCard = lazy(() => import("@/containers/HoverCard"));
 const MovieSite = lazy(() => import("@/containers/MovieSite"));
 const CodeMirrorContainer = lazy(() => import("@/containers/CodeMirror"));
+const CornerCard = lazy(() => import("@/containers/CornerCard"));
+const PLimit = lazy(() => import("@/containers/PLimit"));
 
 function App() {
     return (
@@ -80,6 +82,8 @@ function App() {
                         path={"codemirror"}
                         element={<CodeMirrorContainer />}
                     />
+                    <Route path={"corner-card"} element={<CornerCard />} />
+                    <Route path={"p-limit"} element={<PLimit />} />
                     <Route path="*" element={<Page404 />} />
                 </Route>
             </Routes>
