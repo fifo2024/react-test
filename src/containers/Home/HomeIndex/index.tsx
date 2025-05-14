@@ -357,7 +357,7 @@ const Main: FC<MainProps> = () => {
                 <Card
                     {...{
                         tag: "code",
-                        title: "CodeMirror",
+                        title: "code mirror",
                         url: "/codemirror",
                         icon: (
                             <HiMiniRectangleGroup
@@ -369,7 +369,7 @@ const Main: FC<MainProps> = () => {
                 <Card
                     {...{
                         tag: "card",
-                        title: "CornerCard",
+                        title: "corner-card",
                         url: "/corner-card",
                         icon: (
                             <HiMiniRectangleGroup
@@ -381,7 +381,7 @@ const Main: FC<MainProps> = () => {
                 <Card
                     {...{
                         tag: "function",
-                        title: "pLimit",
+                        title: "p-limit",
                         url: "/p-limit",
                         icon: (
                             <HiVariable
