@@ -38,6 +38,7 @@ const MovieSite = lazy(() => import("@/containers/MovieSite"));
 const CodeMirrorContainer = lazy(() => import("@/containers/CodeMirror"));
 const CornerCard = lazy(() => import("@/containers/CornerCard"));
 const PLimit = lazy(() => import("@/containers/PLimit"));
+const SSE = lazy(() => import("@/containers/SSE"));
 
 function App() {
     return (
@@ -84,6 +85,7 @@ function App() {
                     />
                     <Route path={"corner-card"} element={<CornerCard />} />
                     <Route path={"p-limit"} element={<PLimit />} />
+                    <Route path={"sse"} element={<SSE />} />
                     <Route path="*" element={<Page404 />} />
                 </Route>
             </Routes>

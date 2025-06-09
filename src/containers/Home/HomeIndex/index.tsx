@@ -390,6 +390,18 @@ const Main: FC<MainProps> = () => {
                         ),
                     }}
                 />
+                <Card
+                    {...{
+                        tag: "sse",
+                        title: "SSE",
+                        url: "/sse",
+                        icon: (
+                            <HiVariable
+                                style={{ fontSize: "24px", color: "#4285F4" }}
+                            />
+                        ),
+                    }}
+                />
             </div>
             <div className={styles.tabs}>
                 <Tabs />
