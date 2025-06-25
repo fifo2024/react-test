@@ -2,6 +2,8 @@ import React, { FC } from "react";
 
 import CodeMirror from "./base";
 import JavascriptEditor from "./javascript";
+import XmlEditor from "./xml";
+import JsonEditor from "./json";
 import { CodeMirrorProps } from "./type";
 
 const CodeMirrorEditor: FC<CodeMirrorProps> = (props) => {
@@ -10,15 +12,18 @@ const CodeMirrorEditor: FC<CodeMirrorProps> = (props) => {
 
     switch (lang) {
         case "javascript":
-            console.log("13");
             CodeEditor = JavascriptEditor;
+            break;
+        case "xml":
+            CodeEditor = XmlEditor;
+            break;
+        case "json":
+            CodeEditor = JsonEditor;
             break;
         default:
             CodeEditor = CodeMirror;
             break;
     }
-
-    console.log(20, CodeEditor, props);
 
     return <CodeEditor lang={lang} {...props} />;
 };

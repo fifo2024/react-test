@@ -63,6 +63,8 @@ export default class SSEService {
 
             this.disconnect();
         };
+
+        
     }
 
     disconnect() {

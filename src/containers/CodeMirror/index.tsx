@@ -1,6 +1,7 @@
 import { CodeMirror } from "@/components";
 import JavascriptEditor from "@/components/CodeMirror/javascript";
 import JsonEditor from "@/components/CodeMirror/json";
+import XmlEditor from "@/components/CodeMirror/xml";
 
 const CodeMirrorContainer = () => {
     return (
@@ -29,6 +30,18 @@ const CodeMirrorContainer = () => {
                 {...{
                     minHeight: "480px",
                     value: "{a: 1, b: 2}",
+                }}
+            />
+            <div>
+                --------------------------分隔线--------------------------
+            </div>
+            <XmlEditor
+                {...{
+                    minHeight: "480px",
+                    value: "<xml></xml>",
+                    onChange: (value) => {
+                        console.log(43, value);
+                    },
                 }}
             />
         </>
